@@ -1,4 +1,3 @@
-//{ Driver Code Starts
 #include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
@@ -179,14 +178,6 @@ string Traveling(int graph[20][20], int n, char S)
         vector<double> tmp(graph[i], graph[i] + n);
         distanceMatrix.push_back(tmp);
     }
-    
-
-    // for (int i = 0; i < n; ++i)
-    // {
-    //     for (int j = 0; j < n; ++j)
-    //         cout << distanceMatrix[i][j] << " ";
-    //     cout << endl;
-    // }
 
     int startNode = S - 'A';
     TspDynamicProgrammingIterative solver(distanceMatrix, startNode);
@@ -203,20 +194,10 @@ string Traveling(int graph[20][20], int n, char S)
     }
     res = res.substr(0, res.length()- 1);
     return res;
-
-    // cout << "Tour: ";
-    // for (int node : tour)
-    // {
-    //     cout << (char)(node + 'A') << " ";
-    // }
-    // cout << endl;
-
-    // cout << "Tour cost: " << tourCost << endl;
 }
 
 int main()
 {
-
     // int graph[20][20] = {
     //     {0, 200},
     //     {1, 0}};
@@ -228,6 +209,7 @@ int main()
     //     {0, 0, 6, 0, 0, 0},
     //     {0, 2, 0, 0, 0, 0},
     //     {10, 0, 0, 0, 0, 0}};
+    
     int graph[20][20] = {
         {0, 17, 40, 100, 32, 11, 29, 77, 73, 53, 52, 72},
         {48, 0, 23, 42, 81, 5, 12, 37, 31, 55, 18, 66},
@@ -240,7 +222,8 @@ int main()
         {30, 29, 66, 93, 28, 9, 76, 73, 0, 73, 91, 92},
         {31, 9, 38, 38, 38, 25, 83, 17, 68, 0, 69, 93},
         {35, 61, 19, 45, 24, 10, 94, 33, 53, 90, 0, 62},
-        {19, 82, 57, 95, 57, 96, 67, 13, 54, 65, 90, 0}}; //[0, 5, 3, 4, 11, 7, 10, 2, 9, 1, 6, 8, 0]
+        {19, 82, 57, 95, 57, 96, 67, 13, 54, 65, 90, 0}}; 
+    
     cout << Traveling(graph, 12, 'A');
 
     return 0;
